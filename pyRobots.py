@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-from urllib.request import urlopen
 import sys, os, time
 import requests
 import random
