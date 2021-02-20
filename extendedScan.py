@@ -153,8 +153,6 @@ def extensive():
 				newHost = host
 			else:
 				newHost = host + "/"
-				
-			#extensions = ['.asp', '.aspx', '.css', '.html', '.htm', '.xhtml', '.jhtml', '.jsp', '.jspx', '.js', '.pl', '.php', '.php3', '.php4', '.phtml', '.py', '.rb', '.rhtml', '.shtml', '.xml', '.rss', '.cgi', '.dll', '.png', '.jpg', '.jpeg', '.mp4', '.ogg', '.webm', '.txt', '.pdf', '.log', '.docx']
 
 			for line in lines:
 				if line.startswith('Disallow: /'):
@@ -163,7 +161,7 @@ def extensive():
 					if line.endswith('/'):
 						for word in words:
 							word = word.replace('\n', '')
-							extensions = ['.php']
+							extensions = ['.asp', '.aspx', '.css', '.html', '.htm', '.xhtml', '.jhtml', '.jsp', '.jspx', '.js', '.pl', '.php', '.php3', '.php4', '.phtml', '.py', '.rb', '.rhtml', '.shtml', '.xml', '.rss', '.cgi', '.dll', '.png', '.jpg', '.jpeg', '.mp4', '.ogg', '.webm', '.txt', '.pdf', '.log', '.docx']
 							for x in extensions:
 								newURL = newHost + line + word + x
 								os.system('clear')
