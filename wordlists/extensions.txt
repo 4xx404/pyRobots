@@ -42,3 +42,15 @@
 .txt
 .pdf
 .docx
+.yml
+.yaml
+.iso
+.dmg
+.exe
+.gif
+.tiff
+.psd
+.eps
+.ai
+.indd
+.raw
