@@ -21,7 +21,7 @@ banner = bc.RC + '''
 infoBanner = bc.BC + " [" + bc.GC + "?" + bc.BC + "]"
 successBanner = bc.BC + " [" + bc.GC + "*" + bc.BC + "]"
 errorBanner = bc.BC + " [" + bc.RC + "!" + bc.BC + "]"
-scanType = bc.BC + ' Scan Type: ' + bc.GC + 'Extended Scan\t\t' + bc.BC + 'Scan Speed: ' + bc.BC +'Slow\n'
+scanType = bc.BC + ' Scan Type: ' + bc.GC + 'Advanced Scan\t\t' + bc.BC + 'Scan Speed: ' + bc.RC +'Very Slow\n'
 
 os.system('clear')
 print(banner)
