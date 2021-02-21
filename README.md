@@ -6,5 +6,5 @@ NOTE: Advanced Scan is still in development
 # Usage  
 git clone https://github.com/Bl1xY/pyRobots  
 cd pyRobots  
-python3 pyRobots.py  
+sudo python3 pyRobots.py  
 Enter URL (http/s://www.url.com/)
