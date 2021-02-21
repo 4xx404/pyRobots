@@ -86,6 +86,7 @@
 .php4
 .phtml
 .pkg
+.png
 .pps
 .ppt
 .pptx
