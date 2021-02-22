@@ -12,7 +12,9 @@ All scans create a directory to save every downloaded file in '/Pulled-Data/Key/
 Key format: 0000000  
 
 # Usage  
+```
 git clone https://github.com/Bl1xY/pyRobots  
 cd pyRobots  
 sudo python3 pyRobots.py  
 Enter URL (http/s://www.url.com/)
+```
