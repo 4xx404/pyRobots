@@ -13,7 +13,7 @@ Key format: 0000000
 
 # Usage  
 ```
-git clone https://github.com/Bl1xY/pyRobots  
+git clone https://github.com/4xx404/pyRobots  
 cd pyRobots  
 sudo python3 pyRobots.py  
 Enter URL (http/s://www.url.com/)
