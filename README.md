@@ -15,6 +15,6 @@ Key format: 0000000
 ```
 git clone https://github.com/4xx404/pyRobots  
 cd pyRobots  
-sudo python3 pyRobots.py  
-Enter URL (http/s://www.url.com/)
+python3 -m pip install -r requirements.txt  
+sudo chmod +x pyRobots.py && ./pyRobots
 ```
