@@ -1,6 +1,6 @@
 # pyRobots  
 
-pyRobots is a brute force crawler written in python3. This tool will check for a websites robots.txt file & if it exists, it will download it & then proceed to attempt to download everything else in each of its disallow entries.   
+pyRobots is a brute force crawler written in python3. This tool will check for a websites robots.txt file & if it exists, it will download it & then proceed to attempt to download everything else in each of its disallow entries by brute forcing for files in directories.   
 
 # Scans
 1. Only attempts to download from robots.txt (no directory brute force).  
