@@ -1,62 +1,54 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-import sys, os, time
-from modules.stylesheet import bc, sd, menu
-from modules.quickScan import quick
-banner = sd.banner.logo
-help = menu.helper
-eBan = sd.eBan
-iBan = sd.iBan
-sBan = sd.sBan
+import sys, os, tldextract
+from tld import get_tld
 
-try:
-	os.mkdir('Pulled-Data')
-except FileExistsError:
-	pass
-except Exception:
-	os.system('clear')
-	print(banner)
-	print(eBan + bc.RC + ' ERROR: ' + bc.BC + 'Failed to create ' + bc.RC + '/Pulled-Data/' + bc.BC + ' Directory\n')
-	quit()
+from Core.Stylesheet.Styling import bc, sd
+from Core.Console import Console
+from Core.Commands import Command
+from Core.Input import Input
+from Core.Validity import Validation
 
-os.system('clear')
-print(banner)
-print(help)
+from Core.Scanners.QuickScan import QuickScanner
+from Core.Scanners.DirectoryScan import DirectoryScanner
 
-def robotMenu():
-	try:
-		host = str(input(bc.BC + " URL: " + bc.GC))
-		if(host == ''):
-			os.system('clear')
-			print(banner)
-			print(eBan + bc.RC + ' ERROR: ' + bc.BC + 'URL value cannot be empty\n')
-			quick()			
-		elif(host.startswith('http://') or host.startswith('https://')):
-			if(host.endswith('/')):
-				host = host
-			else:
-				host = host + '/'
-			quick(host)
-		else:
-			os.system('clear')
-			print(banner)
-			print(eBan + bc.RC + ' ERROR: ' + bc.BC + 'Invalid URL value\n')
-			quick()
-	except ValueError:
-		os.system('clear')
-		print(banner)
-		print(menu)
-		print(eBan + bc.RC + "ERROR: " + bc.BC + 'Value must be INTEGER [' + bc.GC + '0-3' + bc.BC + ']\n')
-		robotMenu()
-	except KeyboardInterrupt:
-		os.system('clear')
-		print(banner)
-		print(bc.BC + ' Clearing Cache...')
-		os.system('rm -rf modules/__pycache__/')
-		time.sleep(0.5)
-		os.system('clear')
-		print(banner)
-		quit()
-if __name__ == '__main__':
-	robotMenu()
+sys.dont_write_bytecode = True
+
+class PyRobots:
+	def __init__(self):
+		self.Console = Console()
+		self.Cmd = Command()
+		self.Input = Input()
+		self.Validator = Validation()		
+		self.CreateOutputDirectory()
+
+	def CreateOutputDirectory(self) -> None:
+		try:
+			os.mkdir("output")
+		except FileExistsError:
+			pass
+		except Exception as e:
+			self.Cmd.Clear(f"Could not create {bc.RC}/output/{bc.BC} directory\n {e}\n", True)
+
+	def Start(self):		
+		try:
+			Host = self.Input.SetHostUrl()
+			SetKey = tldextract.extract(Host).domain
+			
+			QuickScanner(Host, SetKey).Start()
+		except KeyboardInterrupt:
+			self.Cmd.Clear(f"\n{sd.eBan}{bc.BC} Keyboard Interrupt\n", True)
+
+		except Exception as e:
+			self.Cmd.Clear(f"{sd.eBan}{bc.BC} Unexpected Error: {bc.RC}{str(e)}{bc.BC}\n", True)
+
+if (__name__ == "__main__"):
+	def Initiate():
+		try:
+			PyRobots().Start()
+		except KeyboardInterrupt:
+			quit()
+
+	Command().Clear()
+	Initiate()
