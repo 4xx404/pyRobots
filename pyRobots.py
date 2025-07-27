@@ -4,6 +4,8 @@
 import sys, os, tldextract
 from tld import get_tld
 
+sys.dont_write_bytecode = True
+
 from Core.Stylesheet.Styling import bc, sd
 from Core.Console import Console
 from Core.Commands import Command
@@ -11,9 +13,6 @@ from Core.Input import Input
 from Core.Validity import Validation
 
 from Core.Scanners.QuickScan import QuickScanner
-from Core.Scanners.DirectoryScan import DirectoryScanner
-
-sys.dont_write_bytecode = True
 
 class PyRobots:
 	def __init__(self):

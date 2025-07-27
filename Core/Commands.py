@@ -2,12 +2,11 @@
 # -*- coding: utf-8 -*-
 
 import sys, platform, os
+sys.dont_write_bytecode = True
 
 from Core.Stylesheet.Styling import Banner
 from Core.Console import Console
 from Core.Validity import Validation
-
-sys.dont_write_bytecode = True
 
 class Command:
     def __init__(self):
