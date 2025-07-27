@@ -2,11 +2,10 @@
 # -*- coding: utf-8 -*-
 
 import sys
+sys.dont_write_bytecode = True
 
 from Core.Stylesheet.Styling import sd, bc
 from Core.Validity import Validation
-
-sys.dont_write_bytecode = True
 
 class Console:
     def __init__(self):

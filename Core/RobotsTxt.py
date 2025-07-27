@@ -4,13 +4,13 @@
 import sys, os, requests
 from typing import List, Dict, Optional
 
+sys.dont_write_bytecode = True
+
 from Core.Stylesheet.Styling import bc, sd
 from Core.Console import Console
 from Core.Config import Config
 from Core.Commands import Command
 from Core.Validity import Validation
-
-sys.dont_write_bytecode = True
 
 class RobotsTxt:
     def __init__(self, Host: str, OutputDirectory: str):

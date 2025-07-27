@@ -5,6 +5,8 @@ import sys, os, requests, time
 from urllib.parse import urljoin
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
+sys.dont_write_bytecode = True
+
 from Core.Stylesheet.Styling import bc, sd
 from Core.Console import Console
 from Core.Config import Config
@@ -13,8 +15,6 @@ from Core.Validity import Validation
 
 from Core.RobotsTxt import RobotsTxt
 from Core.Scanners.DirectoryScan import DirectoryScanner
-
-sys.dont_write_bytecode = True
 
 class QuickScanner:
 	def __init__(self, Host: str, SetKey: str):

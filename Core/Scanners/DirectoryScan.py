@@ -4,6 +4,7 @@
 import sys, os, requests, time
 from urllib.parse import urljoin, urlparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
+sys.dont_write_bytecode = True
 
 from Core.Stylesheet.Styling import bc, sd
 from Core.Console import Console
@@ -12,8 +13,6 @@ from Core.Commands import Command
 from Core.Validity import Validation
 
 from Core.RobotsTxt import RobotsTxt
-
-sys.dont_write_bytecode = True
 
 class DirectoryScanner:
 	def __init__(self, Host: str, SetKey: str, RobotsTxt: RobotsTxt, UserAgent: str = "*"):

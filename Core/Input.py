@@ -2,13 +2,12 @@
 # -*- coding: utf-8 -*-
 
 import sys
+sys.dont_write_bytecode = True
 
-from Core.Stylesheet.Styling import bc, sd
+from Core.Stylesheet.Styling import bc
 from Core.Console import Console
 from Core.Commands import Command
 from Core.Validity import Validation
-
-sys.dont_write_bytecode = True
 
 class Input:
     def __init__(self):
