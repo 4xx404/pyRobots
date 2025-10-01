@@ -71,8 +71,4 @@ Two customizable wordlists are used for brute-forcing:
 You may modify or extend these wordlists to suit your needs.
 
 ### Disclaimer
-
-This tool is intended strictly for educational and authorized security testing purposes. Usage against unauthorized systems may violate legal regulations. The author assumes no responsibility for misuse.
-
-### License
-MIT License. See LICENSE file for details.
+See [pyRobots Disclaimer](https://github.com/4xx404/pyRobots/blob/main/DISCLAIMER.md)
